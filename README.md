@@ -1,9 +1,9 @@
-AWS ElasticDeploy :+1:
+ElasticDeploy :+1:
 ======
 
-Deploy multiple applications/services/websites on a single Elastic Beanstalk environment.
+Deploy multiple applications/services/websites on a single AWS Elastic Beanstalk environment.
 
-Unfortunately, there is no easy way to run multiple applications/services/websites, which have their own GIT repository, on a single Elastic Beanstalk environment. AWS ElasticDeploy (short: **ed**) helps developers solving that problem.
+Unfortunately, there is no easy way to run multiple applications/services/websites, which have their own GIT repository, on a single AWS Elastic Beanstalk environment. ElasticDeploy (short: **ed**) helps developers solving that problem.
 
 How does it work?
 ------
