@@ -3,11 +3,11 @@ from helpers import getCurrentConfigFile, cloneRepo, addRepo, checkEbInit, creat
 
 
 def showHelp():
-    print "Please help me."
+    print "Help is still in progress. Sorry."
 
 
 def initialize():
-    print "Hey ho, let's initialize your multi-repo-deploy repo"
+    print "Hey, let's initialize your ElasticDeploy Repository"
 
     checkEbInit()
     createBasicConfigFile()
@@ -30,7 +30,7 @@ def newRepo():
 
 def create():
     try:
-        print "Starting eb-multi-repo-deploy script"
+        print "Starting ElasticDeploy"
         runCommandsBeforeApplicationCreation()
 
         # Create application (.zip folder in multiDeployLib/applications)
@@ -45,7 +45,7 @@ def create():
         print "\nSomething is wrong with your config. Did you already initialize your project with 'ed init'?\n"
 
     except:
-        raise
+        print "\n\nAn error happened. Bye bye!"
 
 
 def deploy():

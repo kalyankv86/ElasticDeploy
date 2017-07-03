@@ -36,4 +36,4 @@ def main():
 
     except:
         raise
-        print "\n\nBye bye, dude!"
+        print "\n\nAn error happened. Bye bye!"

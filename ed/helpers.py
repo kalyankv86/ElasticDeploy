@@ -6,19 +6,20 @@ from datetime import datetime
 
 nameOfConfig = 'edConfig.json'
 ebextensionsFolder = '.ebextensions'
+applicationNamePrefix = ''
 
 
 # Init Functions
 
 
 def checkEbInit():
-    isEbInitialized = raw_input("\nIs EB already initialized? [y,n]")
+    isEbInitialized = raw_input("\nIs ElasticBeanstalk already initialized? [y,n]")
 
     if isEbInitialized == "y":
         print "Ok, great!"
 
     else:
-        print "Ok, then we need to set it up"
+        print "Ok, then we will set it up"
         call(["eb", "init"])
 
 
@@ -65,7 +66,7 @@ def writeToConfigFile(action, key, value):
 
 def checkRepos(firstRepo):
     if firstRepo:
-        addRepo = raw_input("\nAdd a new repo? [y,n]")
+        addRepo = raw_input("\nAdd a new repository? [y,n]")
     else:
         addRepo = "y"
 
@@ -81,7 +82,7 @@ def checkRepos(firstRepo):
 
         installComposerPackages = False
         if "vendor" in foldersToSkipInApplicationZip:
-            installComposerPackages = raw_input("I just saw that you excluded the vendor folder. Should I install all composer packages when you deploy? [y,n]\n")
+            installComposerPackages = raw_input("I just realized that you excluded the vendor folder. Should I install all composer packages when you deploy? [y,n]\n")
 
         repo = {
             "path": pathToRepo,
@@ -134,7 +135,7 @@ def createVhostConfig():
 
     createFolderIfNotExists(ebextensionsFolder)
 
-    with open(ebextensionsFolder + '/98multi-deploy.config', 'w') as f:
+    with open(ebextensionsFolder + '/98ElasticDeploy.config', 'w') as f:
         f.write('files:\n')
         f.write('  "/etc/httpd/conf.d/vhosts.conf":\n')
         f.write('    mode: "000644"\n')
@@ -142,7 +143,7 @@ def createVhostConfig():
         f.write('    group: root\n')
         f.write('    content: |\n')
 
-        f.write('      # This file got automatically generated from eb-multi-repo-deploy #\n')
+        f.write('      # This file got automatically generated from ElasticDeploy #\n')
 
         for repo in repositories:
             f.write('      <VirtualHost *:80>\n')
@@ -216,8 +217,8 @@ def createApplication():
     repositories = configFile["repositories"]
 
     # create empty .zip file in applications folder
-    applicationName = 'multiRepoDeployApp_'+datetime.now().strftime("%d_%m_%Y_%H_%M_%S")+'.zip'
-    print "Creating application -> " + applicationName
+    applicationName = applicationNamePrefix + '_' + datetime.now().strftime("%d_%m_%Y_%H_%M_%S")+'.zip'
+    print "Creating application: " + applicationName
 
     if not os.path.exists(pathToApplicationFolder):
         os.makedirs(pathToApplicationFolder)
@@ -238,7 +239,7 @@ def createApplication():
 
     zipFileToWrite.close()
 
-    print "\nSuccessfully created application"
+    print "\nSuccessfully created application :-)"
     return applicationName
 
 
@@ -268,7 +269,7 @@ def updateArtifact(pathToApplication):
         f.write("deploy:\n")
         f.write("   artifact: " + pathToApplication)
 
-    print '\nUpdated Artifact in elasticbeanstalk config'
+    print '\nUpdated Artifact in ElasticBeanstalk config'
 
 
 def addRepo(firstRepo):
