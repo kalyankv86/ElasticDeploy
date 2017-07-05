@@ -9,7 +9,7 @@ def readme():
 setup(
     name='ElasticDeploy',
     version='1.0',
-    description='Deploy multiple applications/services/websites on a single elastic beanstalk environment.',
+    description='Deploy multiple applications/services/websites on a single Elastic Beanstalk environment.',
     long_description=readme(),
     keywords='aws elastic beanstalk multi deployment',
     url='https://github.com/tscheiki/ElasticDeploy',
