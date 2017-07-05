@@ -3,7 +3,7 @@ from helpers import getCurrentConfigFile, cloneRepo, addRepo, checkEbInit, creat
 
 
 def showHelp():
-    print "Help is still in progress. Sorry."
+    print "Please take a look here: https://github.com/tscheiki/ElasticDeploy"
 
 
 def initialize():
@@ -13,7 +13,7 @@ def initialize():
     createBasicConfigFile()
     addRepo(True)
 
-    print "\n\nConfiguration done! Now run 'ed create'\n\n"
+    print "\n\nConfiguration done! Now run 'elasticdeploy create'\n\n"
 
 
 def cloneAll():
@@ -39,10 +39,10 @@ def create():
         # Update Artifact
         updateArtifact(getPathToApplicationFolder() + applicationName)
 
-        print "\n\n!! Now is a good time to test your final build. Afterwards you can deploy it with 'ed deploy' !!\n\n"
+        print "\n\n!! Now is a good time to test your final build. Afterwards you can deploy it with 'elasticdeploy deploy' !!\n\n"
 
     except KeyError:
-        print "\nSomething is wrong with your config. Did you already initialize your project with 'ed init'?\n"
+        print "\nSomething is wrong with your config. Did you already initialize your project with 'elasticdeploy init'?\n"
 
     except:
         print "\n\nAn error happened. Bye bye!"
