@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='ElasticDeploy',
-    version='1.0.3',
+    version='1.0.4',
     description='Deploy multiple applications/services/websites on a single Elastic Beanstalk environment.',
     keywords='aws elastic beanstalk multi deployment',
     url='https://github.com/tscheiki/ElasticDeploy',

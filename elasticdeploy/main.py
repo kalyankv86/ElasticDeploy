@@ -8,7 +8,7 @@ def main():
         if len(sys.argv) >= 2:
             arguments = str(sys.argv[1])
         else:
-            arguments = ""
+            arguments = "help"
 
         if arguments == "help":
             showHelp()
