@@ -3,7 +3,7 @@ ElasticDeploy :+1:
 
 Deploy multiple applications/services/websites on a single AWS Elastic Beanstalk environment.
 
-Unfortunately, there is no easy way to run multiple applications/services/websites, which have their own GIT repository, on a single AWS Elastic Beanstalk environment. ElasticDeploy (short: **ed**) helps developers solving that problem.
+Unfortunately, there is no easy way to run multiple applications/services/websites, which have their own GIT repository, on a single AWS Elastic Beanstalk environment. ElasticDeploy helps developers solving that problem.
 
 How does it work?
 ------
@@ -23,12 +23,12 @@ Getting Started
 ```mkdir ed-deployment-repository && cd ed-deployment-repository```  
 
 3. Initialize ElasticDeploy  
-```ed init```  
+```elasticdeploy init```  
 
 4. Follow the initialization guide
 
 5. Create and deploy all applications/services/websites  
-```ed createAndDeploy```
+```elasticdeploy createAndDeploy```
 
 
 Sample Project Structure
@@ -45,7 +45,7 @@ ed-deployment-repository
 │       config.yml
 │   
 └───.ebextensions
-│       98multi-deploy.config
+│       98ElasticDeploy.config
 │
 └───project1
 │       file1
@@ -70,28 +70,28 @@ All Commands
 ------
 
 **Show help page**  
-```ed help```
+```elasticdeploy help```
 
 **Initialize ElasticDeploy**  
-```ed init```
+```elasticdeploy init```
 
 **Clone all repositories**  
-```ed cloneAll```
+```elasticdeploy cloneAll```
 
 **Add a new repository**  
-```ed newRepo```
+```elasticdeploy newRepo```
 
 **Clone all repositories**  
-```ed cloneAll```
+```elasticdeploy cloneAll```
 
 **Create application**  
-```ed create```
+```elasticdeploy create```
 
 **Deploy latest application**  
-```ed deploy```
+```elasticdeploy deploy```
 
 **Create and deploy application**  
-```ed createAndDeploy```
+```elasticdeploy createAndDeploy```
 
 
 
