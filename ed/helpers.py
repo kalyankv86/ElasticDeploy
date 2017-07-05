@@ -6,7 +6,7 @@ from datetime import datetime
 
 nameOfConfig = 'edConfig.json'
 ebextensionsFolder = '.ebextensions'
-applicationNamePrefix = ''
+applicationNamePrefix = 'ElasticDeployApp'
 
 
 # Init Functions
