@@ -81,9 +81,6 @@ All Commands
 **Add a new repository**  
 ```elasticdeploy newRepo```
 
-**Clone all repositories**  
-```elasticdeploy cloneAll```
-
 **Create application**  
 ```elasticdeploy create```
 
